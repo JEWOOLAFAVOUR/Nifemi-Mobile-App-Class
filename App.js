@@ -1,32 +1,48 @@
-import React from "react";
-import { View, Text, StyleSheet, Button, Image } from "react-native";
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
+import React from 'react'
 
 const App = () => {
   return (
     <View style={styles.page}>
-      <Image source={require('./assets/image1.jpg')} style={{ height: 200, width: 210, alignSelf: 'center', marginTop: 35, }} />
-      <View style={{ marginTop: 25 }}>
-        <Text style={{ fontSize: 24, color: 'black', fontWeight: "bold", textAlign: 'center' }}>Join Facebook</Text>
-        <Text style={{ color: 'grey', fontSize: 16, textAlign: 'center', marginTop: 6 }}>We'll help you create a new account in a few easy steps</Text>
+      <View>
+        <View style={styles.inputContainer}>
+          <TextInput placeholder='Full Name' placeholderTextColor={'black'} style={{ color: 'black', fontSize: 13 }} />
+        </View>
+        <View style={styles.inputContainer}>
+          <TextInput placeholder='Passwprd' placeholderTextColor={'black'} style={{ color: 'black', fontSize: 13 }} />
+        </View>
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={{ fontSize: 14, color: "#fff", fontWeight: 'bold' }}>Sign in</Text>
+        </TouchableOpacity>
       </View>
-      <View style={{ marginTop: 25, marginBottom: 250 }}>
-        <Button title="Next" />
-      </View>
-      <Text style={{ fontSize: 16, color: 'blue', fontWeight: 'bold', textAlign: 'center', }}>Already have an account</Text>
     </View>
   )
 }
 
-export default App;
-
+export default App
 
 const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: 'white',
-    paddingTop: 40,
-    // paddingLeft: 20,
+    paddingTop: 50,
+    paddingHorizontal: '5%',
+  },
+  button: {
+    height: 50,
+    borderRadius: 8,
+    backgroundColor: "#1F5C3D",
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+  },
+  inputContainer: {
+    height: 40,
+    borderWidth: 1,
+    borderRadius: 5,
     paddingHorizontal: 10,
+    justifyContent: 'center',
+    marginBottom: 20,
   },
 })
-
