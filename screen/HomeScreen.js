@@ -1,10 +1,15 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
+
+    const newFavour = () => {
+
+    }
+
     return (
         <View style={styles.page}>
-            <TouchableOpacity style={styles.container}>
+            <TouchableOpacity onPress={() => { navigation.navigate('Profile') }} style={styles.container}>
                 <Text style={{ fontSize: 16, color: 'white' }}>Next Screen</Text>
             </TouchableOpacity>
         </View>
