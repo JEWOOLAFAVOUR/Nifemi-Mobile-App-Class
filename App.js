@@ -14,7 +14,9 @@ const App = () => {
   return (
     <NavigationContainer>
 
-      <Nifemi.Navigator>
+      <Nifemi.Navigator screenOptions={{
+        headerShown: false
+      }} >
 
         <Nifemi.Screen name='Home' component={HomeScreen} />
         <Nifemi.Screen name='Profile' component={ProfilePage} />
