@@ -1,142 +1,30 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
+import HomeScreen from './screen/HomeScreen'
+import ProfilePage from './screen/ProfilePage'
+
 
 const App = () => {
 
-  const data = ['Ade', 'Bola', 'Suliyat', 'Mukaila']
+  const Nifemi = createNativeStackNavigator();
 
   return (
-    <View style={styles.page}>
+    <NavigationContainer>
 
-      <FlatList
-        data={data}
-        renderItem={({ item }) => {
-          return (
-            <View style={styles.container}>
-              <Text>{item}</Text>
-            </View>
-          )
-        }}
+      <Nifemi.Navigator>
 
-      />
+        <Nifemi.Screen name='Home' component={HomeScreen} />
+        <Nifemi.Screen name='Profile' component={ProfilePage} />
 
-    </View>
+      </Nifemi.Navigator>
+
+    </NavigationContainer>
   )
 }
 
 export default App
 
-const styles = StyleSheet.create({
-  page: {
-    flex: 1,
-    backgroundColor: '#fff',
-    paddingTop: 40,
-    paddingHorizontal: 30,
-  },
-  container: {
-    height: 50,
-    marginBottom: 20,
-    paddingHorizontal: 20,
-    borderWidth: 1,
-    borderRadius: 5,
-    justifyContent: 'center'
-  },
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { StyleSheet, Text, View, FlatList } from 'react-native'
-// import React from 'react'
-
-// const App = () => {
-
-//   const nifemiChildren = ['Nifemi', 'Goodness', 'Silvernus', "Bala", 'Ade', 'Tunji', 'Adisa'];
-
-//   const name = ['Ade', 'Tunji', 'Adisa']
-
-//   return (
-//     <View style={styles.page}>
-//       <Text style={{ fontSize: 18, color: '#000', fontWeight: 'bold' }}>List Implementation in React Native</Text>
-//       {/* <View>
-//         <Text>Akim=</Text>
-//         <Text>Akim=</Text>
-//         <Text>Akim=</Text>
-//         <Text>Akim=</Text>
-//         <Text>Akim=</Text>
-//         <Text>Akim=</Text>
-//         <Text>Akim=</Text>
-//         <Text>Akim=</Text>
-//         <Text>Akim=</Text>
-//       </View> */}
-
-//       {/* <View>
-//         {
-//           nifemiChildren.map((data, index) => {
-//             return (
-//               <View key={index}>
-//                 <Text>{data}</Text>
-//               </View>
-//             )
-//           })
-//         }
-//       </View> */}
-
-//       <FlatList
-//         data={nifemiChildren}
-//         renderItem={({ item }) => {
-//           return (
-//             <View style={styles.container}>
-//               <Text>{item}</Text>
-//             </View>
-//           )
-//         }}
-//       />
-
-//     </View>
-//   )
-// }
-
-// export default App
-
-// const styles = StyleSheet.create({
-//   page: {
-//     flex: 1,
-//     backgroundColor: "#fff",
-//     paddingTop: 40,
-//     paddingHorizontal: 30,
-//   },
-//   container:{
-
-//   },
-// })
+const styles = StyleSheet.create({})
