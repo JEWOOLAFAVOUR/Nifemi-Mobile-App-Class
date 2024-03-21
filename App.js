@@ -11,12 +11,15 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator screenOptions={{ tabBarStyle: { height: 50 } }}>
         <Tab.Screen name='Home' component={HomeScreen}
           options={{
+            title: 'ddjdjjd',
+            tabBarShowLabel: false,
+            tabBarLabelStyle: { height: 50 },
             tabBarIcon: ({ focused, size, color }) => {
               return (
-                <Image source={require('./assets/home.png')} style={{ height: 20, width: 20, tintColor: focused ? 'blue' : 'black' }} />
+                <Image source={require('./assets/home.png')} style={{ height: focused ? 25 : 20, width: focused ? 25 : 20, tintColor: focused ? 'blue' : 'black' }} />
               )
             }
           }}
