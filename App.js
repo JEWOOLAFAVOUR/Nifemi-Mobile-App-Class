@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -12,7 +12,15 @@ const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name='Home' component={HomeScreen} />
+        <Tab.Screen name='Home' component={HomeScreen}
+          options={{
+            tabBarIcon: ({ focused, size, color }) => {
+              return (
+                <Image source={require('./assets/home.png')} style={{ height: 20, width: 20, tintColor: focused ? 'blue' : 'black' }} />
+              )
+            }
+          }}
+        />
         <Tab.Screen name='Profile' component={ProfilePage} />
       </Tab.Navigator>
     </NavigationContainer>
@@ -22,6 +30,19 @@ const App = () => {
 export default App
 
 const styles = StyleSheet.create({})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
